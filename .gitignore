@@ -40,3 +40,4 @@ sysinfo.txt
 #Ignore Logs
 /Logs/
 Logs\AssetImportWorker1.log
+*.log
