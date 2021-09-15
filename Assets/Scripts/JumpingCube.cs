@@ -31,6 +31,7 @@ public class JumpingCube : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         xMove = Input.GetAxis("Horizontal");
         Vector3 move = (transform.right * xMove); 
 
