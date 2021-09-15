@@ -408,20 +408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c94f1d1e5d371498d3634f19174c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalBox: {fileID: 1070791954}
   playerCube: {fileID: 1773366777}
   playerCamera: {fileID: 519420031}
-  groundCheck: {fileID: 0}
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
   moveSpeed: 10.9
   gravity: -70
   jumpHeight: 0.001
-  acceleration: 0.5
-  minSpeed: 6
-  maxSpeed: 15
 --- !u!143 &931471376
 CharacterController:
   m_ObjectHideFlags: 0
@@ -560,8 +551,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.73357344, z: 1}
+  m_Center: {x: 0, y: -0.13321497, z: 0}
 --- !u!4 &1070791957
 Transform:
   m_ObjectHideFlags: 0
@@ -570,8 +561,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070791954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34, y: 1.39, z: 2}
-  m_LocalScale: {x: 3.25, y: 3.9479501, z: 12}
+  m_LocalPosition: {x: 1.46, y: 2.1, z: 0.89}
+  m_LocalScale: {x: 3.25, y: 3.9479501, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8

@@ -12,12 +12,12 @@ public class LevelEvents : MonoBehaviour
     [SerializeField] private string state;
     private BoxCollider playCollider;
     private int loseCount;
-    private int winCount;
+    private int count;
     void Start()
     {
         playCollider = player.GetComponent<BoxCollider>();
         loseCount = 0;
-        winCount = 0;
+        count = 0;
     }
     
     private void OnTriggerEnter(Collider other)
@@ -38,7 +38,7 @@ public class LevelEvents : MonoBehaviour
             value = "blank";
         }
         PlayerPrefs.SetInt(value, PlayerPrefs.GetInt(value) + 1);
-        winCount = PlayerPrefs.GetInt(value);
+        count = PlayerPrefs.GetInt(value);
         StartCoroutine(ReloadLevelDelayed());
     }
     
@@ -46,10 +46,15 @@ public class LevelEvents : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("ImpossibleGameScene");
-        string enter = string.Concat("You Have Won", winCount);
-        
-        Debug.Log(enter);
+        if (state == "Won")
+        {  
+           string enter = string.Concat("You Have Won {0} times", count);
+           Debug.Log(enter);
+        }
+        else if (state == "Lost")
+        {  
+            string enter = string.Concat("You Have Lost {0} times", count);
+            Debug.Log(enter);
+        }
     }
-
-    
 }

@@ -25,6 +25,7 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
@@ -35,3 +36,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#Ignore Logs
+/Logs/
+Logs\AssetImportWorker1.log
