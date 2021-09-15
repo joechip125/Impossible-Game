@@ -777,7 +777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d61aba39948ce24aac7f72d35fec1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simpleSpawn: {fileID: 5777416349184909868, guid: c00d45d224cc1e54c8770dab83b0f927, type: 3}
+  RegularGround: {fileID: 5777416349184909868, guid: c00d45d224cc1e54c8770dab83b0f927, type: 3}
+  SpikesGround: {fileID: 5777416349184909868, guid: 267986952e2095641b9ac2defed6bdab, type: 3}
   check: {fileID: 0}
 --- !u!4 &1416733320
 Transform:

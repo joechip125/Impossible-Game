@@ -7,20 +7,40 @@ using UnityEngine.SceneManagement;
 
 public class LevelEvents : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] GameObject player;
     [SerializeField] private string state;
     private BoxCollider playCollider;
     private int loseCount;
     private int count;
+    public float timer;
+    public bool ifTrigger;
+    public bool ifCollision;
     void Start()
     {
-        playCollider = player.GetComponent<BoxCollider>();
         loseCount = 0;
         count = 0;
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (ifCollision)
+        {
+            timer = 0.3f;
+            SetUpReload();
+        }
+    }
+
+    
     
     private void OnTriggerEnter(Collider other)
+    {
+        if (ifTrigger)
+        {
+            timer = 1.0f;
+            SetUpReload();
+        }
+    }
+
+    void SetUpReload()
     {
         string value;
         if (state == "Won")
@@ -37,24 +57,23 @@ public class LevelEvents : MonoBehaviour
         {
             value = "blank";
         }
+
         PlayerPrefs.SetInt(value, PlayerPrefs.GetInt(value) + 1);
         count = PlayerPrefs.GetInt(value);
-        StartCoroutine(ReloadLevelDelayed());
+        StartCoroutine(ReloadLevelDelayed()); 
     }
     
     IEnumerator ReloadLevelDelayed()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(timer);
         SceneManager.LoadScene("ImpossibleGameScene");
         if (state == "Won")
         {  
-           string enter = string.Concat("You Have Won {0} times", count);
-           Debug.Log(enter);
+            Debug.Log($"You Have Won {count} times");
         }
         else if (state == "Lost")
-        {  
-            string enter = string.Concat("You Have Lost {0} times", count);
-            Debug.Log(enter);
+        {
+            Debug.Log($"You Have Lost {count} times");
         }
     }
 }

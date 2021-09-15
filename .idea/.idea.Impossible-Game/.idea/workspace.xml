@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1a5d66d-005a-40d5-9cc2-01dcb209a0fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Ground.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Ground.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DynamicJumpingCube.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GroundMover.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GroundMover.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MasterSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MasterSpawner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerCheck.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerCheck.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Spike.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/Spike.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/GroundSpikes1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/GroundSpikes1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spike (1).prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spike (1).prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Impossible-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Impossible-Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ground.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ground.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ImpossibleGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ImpossibleGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JumpingCube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JumpingCube.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hello world.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Hello world.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MasterSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MasterSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TriggerCheck.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" />
@@ -110,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1631629121051</updated>
       <workItem from="1631629128095" duration="16766000" />
-      <workItem from="1631693053538" duration="19499000" />
+      <workItem from="1631693053538" duration="27536000" />
     </task>
     <servers />
   </component>
@@ -141,13 +139,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/LevelEvents.cs</url>
-          <line>58</line>
+          <line>77</line>
           <properties documentPath="C:\Unity Projects\Impossible-Game\Assets\Scripts\LevelEvents.cs" initialLine="58" containingFunctionPresentation="method 'ReloadLevelDelayed'">
             <startOffsets>
-              <option value="1561" />
+              <option value="1693" />
             </startOffsets>
             <endOffsets>
-              <option value="1562" />
+              <option value="1694" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

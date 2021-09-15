@@ -7,6 +7,7 @@ public class TriggerCheck : MonoBehaviour
 {
     public bool isTriggered;
     public bool tickTrigger;
+    public string triggerType;
     [HideInInspector] public string printThis;
     
     // Start is called before the first frame update
@@ -17,7 +18,15 @@ public class TriggerCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isTriggered = true;
+        if (triggerType == "Loser")
+        {
+            
+        }
+
+        else
+        {
+            isTriggered = true;
+        }
     }
 
     // Update is called once per frame
@@ -28,4 +37,5 @@ public class TriggerCheck : MonoBehaviour
             tickTrigger = true;
         }
     }
+
 }

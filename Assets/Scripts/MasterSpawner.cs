@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MasterSpawner : MonoBehaviour
 {
-    public GameObject simpleSpawn = null;
+    public GameObject RegularGround = null;
+    public GameObject SpikesGround = null;
+    
     private GroundMover mover;
     private bool aTrigger;
-    private GameObject keep;
+    private GameObject currentGround;
     private BoxCollider collider;
     [SerializeField] TriggerCheck check;
     private BoxCollider groundCollider;
@@ -22,17 +25,8 @@ public class MasterSpawner : MonoBehaviour
         groundList = new List<GameObject>();
         index = 0;
         
-        keep = Instantiate(simpleSpawn, new Vector3(-10, 0, 0), Quaternion.identity);
-        BoxCollider[] movers;  
-        mover = keep.GetComponent<GroundMover>();
-        movers = keep.GetComponentsInChildren<BoxCollider>();
-
-        check = movers[1].GetComponent<TriggerCheck>();
-        
-        mover.move = true;
-        mover.moveSpeed = 2;
         aTrigger = true;
-        //    Random.Range(0, 2);
+        SpawnMoreGround("First");
     }
 
     // Update is called once per frame
@@ -40,7 +34,7 @@ public class MasterSpawner : MonoBehaviour
     {
         bool trigger = check.tickTrigger;
         
-        if (trigger && aTrigger)
+        if (trigger)
         {
           SpawnMoreGround("Additional");
           trigger = false;
@@ -49,28 +43,86 @@ public class MasterSpawner : MonoBehaviour
     }
 
     void SpawnMoreGround(string addType)
-    {
+    { 
+        if (index > 1)
+        {
+            index = 0;
+        }
+        
+        if (groundDict.ContainsKey(index))
+        {
+            Destroy(groundDict[index]);
+            groundDict.Remove(index);
+        }
         
         if (addType == "Additional")
         {
-            Transform[] trans = keep.GetComponentsInChildren<Transform>();
+            Transform[] trans = currentGround.GetComponentsInChildren<Transform>();
             Transform tran = trans[2];
-            keep = Instantiate(simpleSpawn, tran.position, Quaternion.identity);
-            mover = keep.GetComponent<GroundMover>();
+            InstanceGround(tran.position, "Random");
+            BoxCollider[] movers = currentGround.GetComponentsInChildren<BoxCollider>();
+            check = movers[1].GetComponent<TriggerCheck>();
+            mover = currentGround.GetComponent<GroundMover>();
             aTrigger = false;
+            mover.move = true;
+            mover.moveSpeed = 2;
         }
         else if (addType == "First")
         {
-            index = 0;
-            Transform[] trans = keep.GetComponentsInChildren<Transform>();
-            Transform tran = trans[2];
-            keep = Instantiate(simpleSpawn, new Vector3(-10, 0, 0), Quaternion.identity);
-            mover = keep.GetComponent<GroundMover>();
+            InstanceGround(new Vector3(-10,0,0), "First");
+            
+            mover = currentGround.GetComponent<GroundMover>();
+            BoxCollider[] movers = currentGround.GetComponentsInChildren<BoxCollider>();
+            check = movers[1].GetComponent<TriggerCheck>();
             aTrigger = false;
+            mover.move = true;
+            mover.moveSpeed = 2;
         }
-        groundDict.Add(index, keep);
+        
+        groundDict.Add(index, currentGround);
+        index++;
     }
+    
+    
+    void InstanceGround(Vector3 pos, string spawnType)
+    {
+        GameObject spawnObject = RegularGround;
+        
+        if (spawnType == "First")
+        {
+            spawnObject = RegularGround;
+        }
+        
+        else if (spawnType == "Random")
+        {
+            int rand = Random.Range(0, 2);
 
+            if (rand == 0)
+            {
+                spawnObject = SpikesGround;
+            }
+            else if (rand == 1)
+            {
+                spawnObject = RegularGround;
+            }
+            else if (rand == 2)
+            {
+                spawnObject = RegularGround;
+            }
+        }
+        else
+        {
+            spawnObject = RegularGround;
+        }
+        
+        currentGround = Instantiate(spawnObject, pos, Quaternion.identity);
+    }
+    
+    void ClearGround()
+    {
+        
+    }
+    
     void AdjustDictionary()
     {
         
